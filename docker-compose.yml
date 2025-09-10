@@ -1,0 +1,27 @@
+services:
+  suitecrm:
+    build: .
+    ports:
+      - "80:80"
+    depends_on:
+      - mariadb
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=mariadb
+    volumes:
+      # suitecrm installation files
+      - ./suitecrm:/var/www/suitecrm
+      # apache logs
+      - ./logs:/var/log/apache2
+
+  mariadb:
+    image: mariadb:latest
+    env_file:
+      - .env
+    volumes:
+      # all files in initdb will be executed in alphabetical order during container startup
+      - ./initdb:/docker-entrypoint-initdb.d
+      - ./mariadb:/var/lib/mysql
+    ports:
+      - "3306:3306"

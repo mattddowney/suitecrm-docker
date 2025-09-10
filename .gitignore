@@ -1,0 +1,22 @@
+# SuiteCRM files
+suitecrm/
+logs/
+
+# MariaDB data
+mariadb/
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files
+docker-compose.override.yml
