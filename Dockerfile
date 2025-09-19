@@ -25,10 +25,10 @@ RUN apt install -y \
     unzip \
     && rm -rf /var/lib/apt/lists/*
 
-# Download and install SuiteCRM 8.8.1
+# Download and install SuiteCRM 8.9.0
 WORKDIR /var/www
-RUN wget https://github.com/SuiteCRM/SuiteCRM-Core/releases/download/v8.8.1/SuiteCRM-8.8.1.zip \
-    && unzip SuiteCRM-8.8.1.zip -d suitecrm && rm SuiteCRM-8.8.1.zip
+RUN wget https://suitecrm.com/download/166/suite89/565428/suitecrm-8-9-0.zip \
+    && unzip suitecrm-8-9-0.zip -d suitecrm && rm suitecrm-8-9-0.zip
 
 # Set permissions
 RUN chown -R www-data:www-data suitecrm \
