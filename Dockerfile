@@ -27,6 +27,8 @@ RUN apt install -y \
 
 # Download and install SuiteCRM 8.9.0
 WORKDIR /var/www
+# This is the production version from https://suitecrm.com/download/
+# For the development download, obtain from https://github.com/SuiteCRM/SuiteCRM-Core/releases
 RUN wget https://suitecrm.com/download/166/suite89/565428/suitecrm-8-9-0.zip \
     && unzip suitecrm-8-9-0.zip -d suitecrm && rm suitecrm-8-9-0.zip
 
